@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Currículum ficticio de Cristal Urías, guía turística.">
+  <title>Cristal Lucero Urías Sotelo / Guía turística </title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #471737;
+      --muted: #5d7180;
+      --accent: #ff00b3;
+      --accent-dark: #ff02ab;
+      --paper: #ffffff;
+      --canvas: #f1f5f4;
+      --line: #dce6e3;
+      --soft: #e8f4f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-underline-offset: 3px;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #e1a93d;
+      outline-offset: 3px;
+    }
+
+    .page {
+      width: min(100% - 32px, 980px);
+      margin: 40px auto;
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 16px 48px rgb(23 43 58 / 8%);
+    }
+
+    .sample-note {
+      margin: 0;
+      padding: 9px 24px;
+      background: #fff3d6;
+      color: #684b0b;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 24px;
+      padding: 44px 52px;
+      background: linear-gradient(125deg, #ff00c8, #771767);
+      color: #fff;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #a9ded0;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 4px;
+      font-size: clamp(2rem, 5vw, 3.1rem);
+      letter-spacing: -0.04em;
+      line-height: 1.15;
+    }
+
+    .headline {
+      margin: 0;
+      color: #d2e8e3;
+      font-size: 1.15rem;
+    }
+
+    .initials {
+      display: grid;
+      width: 104px;
+      aspect-ratio: 1;
+      place-items: center;
+      border: 1px solid rgb(255 255 255 / 38%);
+      border-radius: 50%;
+      background: rgb(255 255 255 / 10%);
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      margin-top: 22px;
+      color: #e3f0ed;
+      font-size: 0.9rem;
+    }
+
+    .contact a {
+      color: #e3f0ed;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(220px, 0.9fr);
+      gap: 44px;
+      padding: 40px 52px 48px;
+    }
+
+    section + section {
+      margin-top: 34px;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 17px;
+      font-size: 1.12rem;
+      letter-spacing: 0.01em;
+    }
+
+    h2::before {
+      width: 4px;
+      height: 21px;
+      border-radius: 4px;
+      background: var(--accent);
+      content: "";
+    }
+
+    h3 {
+      margin-bottom: 3px;
+      font-size: 1rem;
+    }
+
+    .summary {
+      margin-bottom: 0;
+      color: #344957;
+    }
+
+    .entry {
+      position: relative;
+      padding: 0 0 21px 18px;
+      border-left: 1px solid var(--line);
+    }
+
+    .entry:last-child {
+      padding-bottom: 0;
+      border-left-color: transparent;
+    }
+
+    .entry::before {
+      position: absolute;
+      top: 7px;
+      left: -5px;
+      width: 9px;
+      height: 9px;
+      border: 2px solid var(--paper);
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent);
+      content: "";
+    }
+
+    .meta {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 19px;
+      color: #070607;
+    }
+
+    li + li {
+      margin-top: 4px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skill-list li {
+      margin: 0;
+      padding: 5px 10px;
+      border: 1px solid #d2e9e3;
+      border-radius: 999px;
+      background: var(--soft);
+      color: #030303;
+      font-size: 0.85rem;
+    }
+
+    .side-card {
+      margin-top: 28px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #f8fbfa;
+    }
+
+    .side-card h2 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .side-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .languages p {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .languages p:last-child {
+      margin-bottom: 0;
+    }
+
+    .level {
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    footer {
+      padding: 15px 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .page {
+        width: min(100% - 20px, 560px);
+        margin: 10px auto;
+        border-radius: 13px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 32px 25px;
+      }
+
+      .initials {
+        grid-row: 1;
+        width: 72px;
+        font-size: 1.5rem;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 30px 25px 36px;
+      }
+
+      .sidebar {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 16px;
+      }
+
+      .side-card {
+        margin-top: 0;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: 100%;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .hero {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <p class="sample-note">Perfil de demostración: nombre, experiencia y datos de contacto son ficticios.</p>
+
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Currículum vitae</p>
+        <h1>Cristal Urías</h1>
+        <p class="headline">Guía turística · Experiencias culturales y de naturaleza</p>
+        <div class="contact" aria-label="Datos de contacto ficticios">
+          <span>Guadalajara, Jalisco</span>
+          <a href="mailto:cristal.urias@example.com">cristal.urias@example.com</a>
+          <a href="tel:+525555010267">+52 55 5501 0267</a>
+        </div>
+      </div>
+      <div class="initials" aria-hidden="true">CU</div>
+    </header>
+
+    <div class="layout">
+      <main>
+        <section aria-labelledby="perfil">
+          <h2 id="perfil">Perfil profesional</h2>
+          <p class="summary">
+            Guía turística con cuatro años de experiencia diseñando recorridos amenos,
+            seguros y accesibles para grupos nacionales e internacionales. Especializada
+            en patrimonio cultural, gastronomía local y rutas de naturaleza. Disfruto
+            compartir historias del destino y adaptar cada visita a los intereses del grupo.
+          </p>
+        </section>
+
+        <section aria-labelledby="experiencia">
+          <h2 id="experiencia">Experiencia</h2>
+          <article class="entry">
+            <h3>Guía de recorridos culturales</h3>
+            <p class="meta">Rutas de Occidente · Guadalajara, Jalisco · 2023–actualidad</p>
+            <ul>
+              <li>Coordino recorridos a pie por el centro histórico para grupos de hasta 15 personas.</li>
+              <li>Presento la historia y arquitectura local con explicaciones en español e inglés.</li>
+              <li>Organizo itinerarios, horarios y recomendaciones para una experiencia segura y puntual.</li>
+            </ul>
+          </article>
+          <article class="entry">
+            <h3>Asistente de experiencias turísticas</h3>
+            <p class="meta">Senderos de Agave · Tequila, Jalisco · 2021–2023</p>
+            <ul>
+              <li>Apoyé visitas guiadas sobre el paisaje agavero y las tradiciones de la región.</li>
+              <li>Recibí a visitantes, confirmé reservaciones y atendí consultas antes y durante los recorridos.</li>
+              <li>Colaboré en actividades para grupos familiares y escolares.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section aria-labelledby="formacion">
+          <h2 id="formacion">Formación académica</h2>
+          <article class="entry">
+            <h3>Licenciatura en Turismo</h3>
+            <p class="meta">Universidad Metropolitana de Occidente · Guadalajara · 2017–2021</p>
+            <p class="summary">Énfasis en interpretación del patrimonio y diseño de productos turísticos.</p>
+          </article>
+        </section>
+      </main>
+
+      <aside class="sidebar" aria-label="Habilidades y datos adicionales">
+        <section>
+          <h2>Competencias</h2>
+          <ul class="skill-list">
+            <li>Interpretación cultural</li>
+            <li>Diseño de itinerarios</li>
+            <li>Atención al visitante</li>
+            <li>Coordinación de grupos</li>
+            <li>Primeros auxilios básicos</li>
+            <li>Turismo sostenible</li>
+          </ul>
+        </section>
+
+        <section class="side-card languages">
+          <h2>Idiomas</h2>
+          <p><span>Español</span><span class="level">Nativo</span></p>
+          <p><span>Inglés</span><span class="level">Avanzado</span></p>
+          <p><span>Italiano</span><span class="level">Intermedio</span></p>
+        </section>
+
+        <section class="side-card">
+          <h2>Certificaciones</h2>
+          <ul>
+            <li>Primeros auxilios para actividades al aire libre · 2024</li>
+            <li>Atención incluyente a visitantes · 2023</li>
+          </ul>
+        </section>
+
+        <section class="side-card">
+          <h2>Intereses profesionales</h2>
+          <p>Rutas gastronómicas, turismo comunitario y conservación del patrimonio natural.</p>
+        </section>
+      </aside>
+    </div>
+
+    <footer>Currículum ficticio creado como ejemplo de presentación profesional.</footer>
+  </article>
+</body>
+</html>
