@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Currículum de ejemplo de Juan Luis Payan, nutriólogo. Datos ficticios.">
+  <title>Juan Luis Payan | Nutriólogo</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #24352e;
+      --muted: #68756c;
+      --accent: #477b56;
+      --accent-dark: #315b3e;
+      --paper: #fffefa;
+      --canvas: #eef2eb;
+      --line: #dce3d8;
+      --soft: #edf4e9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-underline-offset: 3px;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #d58b43;
+      outline-offset: 3px;
+    }
+
+    .page {
+      width: min(100% - 32px, 980px);
+      margin: 40px auto;
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 16px 48px rgb(36 53 46 / 8%);
+    }
+
+    .sample-note {
+      margin: 0;
+      padding: 9px 24px;
+      background: #fff0d9;
+      color: #654715;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 24px;
+      padding: 44px 52px;
+      background: linear-gradient(125deg, #243c32, #477b56);
+      color: #fff;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #c9e1bd;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 4px;
+      font-size: clamp(2rem, 5vw, 3.1rem);
+      line-height: 1.15;
+    }
+
+    .headline {
+      margin: 0;
+      color: #e0ebdc;
+      font-size: 1.15rem;
+    }
+
+    .initials {
+      display: grid;
+      width: 100px;
+      aspect-ratio: 1;
+      place-items: center;
+      border: 1px solid rgb(255 255 255 / 42%);
+      border-radius: 50%;
+      background: rgb(255 255 255 / 10%);
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      margin-top: 22px;
+      color: #e7eee4;
+      font-size: 0.9rem;
+    }
+
+    .contact a {
+      color: #e7eee4;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(220px, 0.9fr);
+      gap: 44px;
+      padding: 40px 52px 48px;
+    }
+
+    section + section {
+      margin-top: 34px;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 17px;
+      font-size: 1.12rem;
+    }
+
+    h2::before {
+      width: 4px;
+      height: 21px;
+      border-radius: 4px;
+      background: var(--accent);
+      content: "";
+    }
+
+    h3 {
+      margin-bottom: 3px;
+      font-size: 1rem;
+    }
+
+    .summary {
+      margin-bottom: 0;
+      color: #43534a;
+    }
+
+    .entry {
+      position: relative;
+      padding: 0 0 21px 18px;
+      border-left: 1px solid var(--line);
+    }
+
+    .entry:last-child {
+      padding-bottom: 0;
+      border-left-color: transparent;
+    }
+
+    .entry::before {
+      position: absolute;
+      top: 7px;
+      left: -5px;
+      width: 9px;
+      height: 9px;
+      border: 2px solid var(--paper);
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent);
+      content: "";
+    }
+
+    .meta {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 19px;
+      color: #43534a;
+    }
+
+    li + li {
+      margin-top: 4px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skill-list li {
+      margin: 0;
+      padding: 5px 10px;
+      border: 1px solid #d6e4d0;
+      border-radius: 999px;
+      background: var(--soft);
+      color: #315b3e;
+      font-size: 0.85rem;
+    }
+
+    .side-card {
+      margin-top: 28px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #f7f9f4;
+    }
+
+    .side-card h2 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .side-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .languages p {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .languages p:last-child {
+      margin-bottom: 0;
+    }
+
+    .level {
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    footer {
+      padding: 15px 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .page {
+        width: min(100% - 20px, 560px);
+        margin: 10px auto;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 32px 25px;
+      }
+
+      .initials {
+        grid-row: 1;
+        width: 72px;
+        font-size: 1.4rem;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 30px 25px 36px;
+      }
+
+      .sidebar {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 16px;
+      }
+
+      .side-card {
+        margin-top: 0;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: 100%;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .hero {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <p class="sample-note">Perfil de demostración: nombre, formación, experiencia y contacto son ficticios.</p>
+
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Currículum vitae</p>
+        <h1>Juan Luis Payan</h1>
+        <p class="headline">Licenciado en Nutrición · Educación alimentaria y consulta nutricional</p>
+        <div class="contact" aria-label="Información de contacto ficticia">
+          <span>Guadalajara, Jalisco</span>
+          <a href="mailto:juan.payan@example.com">juan.payan@example.com</a>
+          <a href="tel:+523355501024">+52 33 5550 1024</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+      <div class="initials" aria-hidden="true">JLP</div>
+    </header>
+
+    <div class="layout">
+      <main>
+        <section aria-labelledby="perfil">
+          <h2 id="perfil">Perfil profesional</h2>
+          <p class="summary">
+            Nutriólogo con experiencia en orientación alimentaria y acompañamiento de personas adultas
+            en consulta ambulatoria. Elaboro planes de alimentación individualizados a partir de la
+            historia clínica, los hábitos y las metas de cada persona. Me interesa promover una relación
+            flexible y sostenible con la comida mediante educación clara, seguimiento y objetivos realistas.
+          </p>
+        </section>
+
+        <section aria-labelledby="experiencia">
+          <h2 id="experiencia">Experiencia profesional</h2>
+          <article class="entry">
+            <h3>Nutriólogo clínico</h3>
+            <p class="meta">Centro de Bienestar Armonía · Guadalajara · 2022–Actualidad</p>
+            <ul>
+              <li>Realizo entrevistas nutricionales y evaluaciones iniciales para personas adultas.</li>
+              <li>Diseño planes de alimentación adaptados a preferencias, horarios y objetivos acordados.</li>
+              <li>Doy seguimiento periódico y registro avances para ajustar las recomendaciones.</li>
+            </ul>
+          </article>
+          <article class="entry">
+            <h3>Asistente de educación alimentaria</h3>
+            <p class="meta">Programa Comunitario Vida Sana · Zapopan · 2020–2022</p>
+            <ul>
+              <li>Colaboré en talleres de lectura de etiquetas, planeación de comidas y hábitos saludables.</li>
+              <li>Preparé materiales educativos para grupos comunitarios y jornadas de salud.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section aria-labelledby="formacion">
+          <h2 id="formacion">Formación académica</h2>
+          <article class="entry">
+            <h3>Licenciatura en Nutrición</h3>
+            <p class="meta">Universidad Metropolitana de Occidente · Guadalajara · 2016–2020</p>
+          </article>
+          <article class="entry">
+            <h3>Prácticas profesionales en nutrición comunitaria</h3>
+            <p class="meta">Centro de Salud Los Olivos · Guadalajara · 2019–2020</p>
+          </article>
+        </section>
+
+        <section aria-labelledby="proyectos">
+          <h2 id="proyectos">Proyectos destacados</h2>
+          <article class="entry">
+            <h3>Comer bien en familia</h3>
+            <p class="meta">Taller comunitario · 2023</p>
+            <p class="summary">Diseño de sesiones prácticas sobre menús accesibles, porciones y organización semanal de alimentos.</p>
+          </article>
+          <article class="entry">
+            <h3>Guía de colaciones para jornadas largas</h3>
+            <p class="meta">Recurso educativo · 2022</p>
+            <p class="summary">Desarrollo de opciones sencillas de colación con ingredientes disponibles en comercios locales.</p>
+          </article>
+        </section>
+      </main>
+
+      <aside class="sidebar" aria-label="Competencias y datos adicionales">
+        <section aria-labelledby="competencias">
+          <h2 id="competencias">Competencias</h2>
+          <ul class="skill-list">
+            <li>Evaluación nutricional</li>
+            <li>Educación alimentaria</li>
+            <li>Consulta individual</li>
+            <li>Planeación de menús</li>
+            <li>Entrevista motivacional</li>
+            <li>Talleres comunitarios</li>
+            <li>Expediente clínico</li>
+            <li>Comunicación empática</li>
+          </ul>
+        </section>
+
+        <section class="side-card" aria-labelledby="enfoque">
+          <h2 id="enfoque">Enfoque de trabajo</h2>
+          <p>Atención centrada en la persona, objetivos alcanzables, escucha activa y recomendaciones prácticas basadas en evidencia.</p>
+        </section>
+
+        <section class="side-card languages" aria-labelledby="idiomas">
+          <h2 id="idiomas">Idiomas</h2>
+          <p><span>Español</span><span class="level">Nativo</span></p>
+          <p><span>Inglés</span><span class="level">Intermedio B1</span></p>
+        </section>
+
+        <section class="side-card" aria-labelledby="cursos">
+          <h2 id="cursos">Cursos de ejemplo</h2>
+          <ul>
+            <li>Consejería en alimentación saludable · 2024</li>
+            <li>Nutrición en las distintas etapas de vida · 2023</li>
+            <li>Comunicación para la promoción de la salud · 2022</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <footer>Currículum ficticio de demostración · No representa a una persona ni credenciales reales.</footer>
+  </article>
+</body>
+</html>
